@@ -1,4 +1,4 @@
-# MongoDB Relations for Laravel
+# Crud operation for Laravel
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
