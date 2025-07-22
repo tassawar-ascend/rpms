@@ -1,5 +1,5 @@
 {
-  "name": "common/rpms",
+  "name": "tassawartech174/rpms",
   "description": "Description of the package",
   "type": "library",
   "license": "MIT",
@@ -11,7 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Common\\Rpms\\": "src/"
+      "TassawarTech174\\Rpms\\": "src/"
     }
   },
   "require": {
@@ -21,7 +21,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Common\\Rpms\\RpmsServiceProvider"
+        "TassawarTech174\\Rpms\\RpmsServiceProvider"
       ]
     }
   },

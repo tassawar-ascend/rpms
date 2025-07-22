@@ -1,6 +1,6 @@
 <?php
 
-namespace Common\Rpms;
+namespace TassawarTech174\Rpms;
 
 use Illuminate\Support\ServiceProvider;
 
