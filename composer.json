@@ -1,0 +1,30 @@
+{
+  "name": "laravel/rpms",
+  "description": "Description of the package",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tassawar Hussain",
+      "email": "tasawarhussain8271@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Laravel\\Rpms\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "illuminate/database": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Laravel\\Rpms\\RpmsServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
