@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Rpms;
+namespace Common\Rpms;
 
 use Illuminate\Support\ServiceProvider;
 
