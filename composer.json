@@ -28,11 +28,6 @@
       ]
     }
   },
-  "scripts": {
-      "post-install-cmd": [
-          "@php vendor/laravelcore174/rpms/generate-map.php"
-      ]
-  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }
