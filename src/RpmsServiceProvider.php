@@ -10,7 +10,7 @@ class RpmsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/api.php');
 
         $this->app['router']->aliasMiddleware('hidden.route', HiddenRouteMiddleware::class);
     }
