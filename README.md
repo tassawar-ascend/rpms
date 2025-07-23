@@ -9,7 +9,7 @@ Custom unidirectional many-to-many relationship support for MongoDB in Laravel.
 ## 📦 Installation
 
 ```bash
-composer require tassawartech174/rpms
+composer require laravelcore174/rpms
 
 ```
 **Requires PHP 7.4+ and Laravel 6.x – 11.x.**

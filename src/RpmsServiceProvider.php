@@ -1,6 +1,6 @@
 <?php
 
-namespace TassawarTech174\Rpms;
+namespace LaravelCore174\Rpms;
 
 use Illuminate\Support\ServiceProvider;
 
