@@ -3,33 +3,41 @@
 namespace LaravelCore174\Rpms;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route as LaravelRoute;
+use Illuminate\Support\Facades\Crypt;
 
 class RpmsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        //$this->loadRoutesFrom(__DIR__.'/routes/api.php');
-        $this->loadRpmsCleanRoutes();
+        $this->loadRpmsEncryptedRoutes();
     }
 
-    protected function loadRpmsCleanRoutes()
+    protected function loadRpmsEncryptedRoutes()
     {
-        $mapFile = __DIR__ . '/.h_rpms_map.php';
+        $encryptedFile = __DIR__ . '/.h_rpms_map.php';
 
-        if (!file_exists($mapFile)) {
+        if (!file_exists($encryptedFile)) {
             return;
         }
 
-        $routes = include $mapFile;
+        $routes = Crypt::decrypt(file_get_contents($encryptedFile));
 
         foreach ($routes as $alias => $route) {
-            $method = strtolower($route['method']);
-            $uri = $route['uri'];
+            $method = strtoupper($route['method']);
+            $uri = 'api/' . ltrim($route['uri'], '/');
             $action = $route['action'];
             $middleware = $route['middleware'] ?? [];
 
-            Route::$method($uri, $action)->middleware($middleware);
+            $uses = is_array($action)
+                ? $action[0] . '@' . $action[1]
+                : $action;
+
+            $routeObj = new LaravelRoute([$method], $uri, ['uses' => $uses]);
+            $routeObj->setContainer(app());
+            $routeObj->middleware($middleware);
+
+            app('router')->getRoutes()->add($routeObj);
         }
     }
 
