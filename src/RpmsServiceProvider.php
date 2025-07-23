@@ -8,6 +8,13 @@ class RpmsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        app('router')->aliasMiddleware('rpms.x', \LaravelCore174\Rpms\Filters\ActionFilter::class);
+        $this->loadRoutesFrom(function () {
+            $encryptedMap = include __DIR__.'/../../.h_rpms_map.php';
+
+            foreach ($encryptedMap as $alias => $route) {
+                \Route::middleware($route['middleware'] ?? [])
+                    ->{$route['method']}($route['uri'], $route['action']);
+            }
+        });
     }
 }
