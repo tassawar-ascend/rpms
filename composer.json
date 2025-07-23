@@ -18,7 +18,7 @@
     "php": ">=7.4",
     "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
     "illuminate/database": "^8.0|^9.0|^10.0|^11.0",
-    "mostafamaklad/laravel-permission-mongodb": "^5.1"
+    "mostafamaklad/laravel-permission-mongodb": "^4.0"
   },
   "extra": {
     "laravel": {
