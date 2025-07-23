@@ -5,7 +5,7 @@ namespace LaravelCore174\Rpms\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class RoleController extends Controller
+class RoleHandler extends Controller
 {
     public function index() {
         return response()->json(['message' => 'List roles']);
