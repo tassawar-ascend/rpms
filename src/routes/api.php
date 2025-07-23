@@ -1,25 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use LaravelCore174\Rpms\Http\Controllers\PermissionHandler;
-use LaravelCore174\Rpms\Http\Controllers\RoleHandler;
+use LaravelCore174\Rpms\Http\Controllers\PermissionController;
+use LaravelCore174\Rpms\Http\Controllers\RoleController;
 
-Route::middleware(['hidden.route'])->prefix('x9a7f-pm')->group(function () {
-    Route::prefix('pms')->group(function () {
-        Route::get('y13', [PermissionHandler::class, 'index']);
-        Route::post('q21', [PermissionHandler::class, 'create']);
-        Route::get('s42/{id}', [PermissionHandler::class, 'show']);
-        Route::post('z83', [PermissionHandler::class, 'edit']);
-        Route::delete('d77/{id}', [PermissionHandler::class, 'delete']);
-    });
+Route::prefix('permissions')->group(function () {
+    Route::get('/', [PermissionController::class, 'index']);
+    Route::post('create', [PermissionController::class, 'create']);
+    Route::get('show/{id}', [PermissionController::class, 'show']);
+    Route::post('update', [PermissionController::class, 'edit']);
+    Route::delete('delete/{id}', [PermissionController::class, 'delete']);
+});
 
-    Route::prefix('rms')->group(function () {
-        Route::get('r13', [RoleHandler::class, 'index']);
-        Route::post('c24', [RoleHandler::class, 'create']);
-        Route::get('v89/{id}', [RoleHandler::class, 'show']);
-        Route::post('u55', [RoleHandler::class, 'edit']);
-        Route::delete('x31/{id}', [RoleHandler::class, 'delete']);
-        Route::post('a67', [RoleHandler::class, 'assignPermission']);
-        Route::get('m28', [RoleHandler::class, 'permission']);
-    });
+Route::prefix('role')->group(function () {
+    Route::get('/', [RoleController::class, 'index']);
+    Route::post('create', [RoleController::class, 'create']);
+    Route::get('show/{id}', [RoleController::class, 'show']);
+    Route::post('update', [RoleController::class, 'edit']);
+    Route::delete('delete/{id}', [RoleController::class, 'delete']);
+    Route::post('assignPermission', [RoleController::class, 'assignPermission']);
+    Route::get('permission', [RoleController::class, 'permission']);
 });
