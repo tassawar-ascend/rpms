@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;
 
-class EncryptedRouteLoader
+class RpmsCoreLoader
 {
     public static function load(string $path): void
     {
