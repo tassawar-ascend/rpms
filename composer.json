@@ -23,8 +23,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "LaravelCore174\\Rpms\\RpmsServiceProvider",
-        "LaravelCore174\\Rpms\\Providers\\RouteServiceProvider"
+        "LaravelCore174\\Rpms\\RpmsServiceProvider"
       ]
     }
   },
