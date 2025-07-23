@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\PackageB\Http\Controllers;
+namespace LaravelCore174\Rpms\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;

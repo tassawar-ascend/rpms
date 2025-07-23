@@ -1,9 +1,8 @@
 <?php
 
-namespace YourVendor\PackageB\Http\Controllers;
+namespace LaravelCore174\Rpms\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 
 class PermissionHandler extends Controller
