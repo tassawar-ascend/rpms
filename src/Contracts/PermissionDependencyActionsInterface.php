@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 interface PermissionDependencyActionsInterface
 {
-    public function index();
+    public function index(Request $request);
     public function create(Request $request);
     public function show($id);
     public function edit(Request $request);

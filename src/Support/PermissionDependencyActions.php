@@ -22,8 +22,8 @@ class PermissionDependencyActions implements PermissionDependencyActionsInterfac
         protected DeletePermission $delete,
     ) {}
 
-    public function index() {
-        return ($this->index)();
+    public function index(Request $request) {
+        return ($this->index)($request);
     }
 
     public function create(Request $request) {

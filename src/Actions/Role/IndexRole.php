@@ -9,7 +9,7 @@ class IndexRole
 {
     public function __invoke(Request $request)
     {
-        $perpage = $request->get('$request->per_page', 15);
+        $perpage = $request->get('per_page', 15);
         $roles = Role::with('regions','departments')->orderBy('created_at', 'DESC'); 
 
         if (isset($request->search) && $request->search) {
