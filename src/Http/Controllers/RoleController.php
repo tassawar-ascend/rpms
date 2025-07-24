@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class RoleController extends BaseController
 {
-    public function index()
+    public function index(Request $request)
     {
-        return $this->role->index();
+        return $this->role->index($request);
     }
 
     public function create(Request $request)
@@ -36,8 +36,8 @@ class RoleController extends BaseController
         return $this->role->assignPermission($request);
     }
 
-    public function permission()
+    public function permission(Request $request)
     {
-        return $this->role->permission();
+        return $this->role->permission($request);
     }
 }

@@ -26,9 +26,9 @@ class RoleDependencyActions implements RoleDependencyActionsInterface
         protected ListRolePermissions $listPermissions,
     ) {}
 
-    public function index(): mixed
+    public function index(Request $request): mixed
     {
-        return ($this->index)();
+        return ($this->index)($request);
     }
 
     public function create(Request $request): mixed
@@ -56,8 +56,8 @@ class RoleDependencyActions implements RoleDependencyActionsInterface
         return ($this->assignPermission)($request);
     }
 
-    public function permission(): mixed
+    public function permission(Request $request): mixed
     {
-        return ($this->listPermissions)();
+        return ($this->listPermissions)($request);
     }
 }

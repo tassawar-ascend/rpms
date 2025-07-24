@@ -2,12 +2,28 @@
 
 namespace LaravelCore174\Rpms\Actions;
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use LaravelCore174\Rpms\Eloquents\Role;
 
 class IndexRole
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        return DB::table('roles')->paginate(10);
+        $perpage = $request->get('$request->per_page', 15);
+        $roles = Role::with('regions','departments')->orderBy('created_at', 'DESC'); 
+
+        if (isset($request->search) && $request->search) {
+            $roles->where(function ($query) use ($request) {
+                $query->where('name', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        if (in_array(auth('api')->user()->type, ['Admin', 'admin'])) {
+            $roles->where('show', true);
+        }
+
+        return (!isset($request->isPagination) || !(int) $request->isPagination)
+            ? $roles->get()
+            : $roles->paginate($perpage);
     }
 }
