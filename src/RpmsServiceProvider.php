@@ -4,8 +4,10 @@ namespace LaravelCore174\Rpms;
 
 use Illuminate\Support\ServiceProvider;
 use LaravelCore174\Rpms\Contracts\RoleDependencyActionsInterface;
+use LaravelCore174\Rpms\Contracts\PermissionDependencyActionsInterface;
 use LaravelCore174\Rpms\Support\RpmsCoreLoader;
-use LaravelCore174\Rpms\Support\DependencyActions;
+use LaravelCore174\Rpms\Support\RoleDependencyActions;
+use LaravelCore174\Rpms\Support\PermissionDependencyActions;
 
 class RpmsServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,7 @@ class RpmsServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind(RoleDependencyActionsInterface::class, DependencyActions::class);
+        $this->app->bind(RoleDependencyActionsInterface::class, RoleDependencyActions::class);
+        $this->app->bind(PermissionDependencyActionsInterface::class, PermissionDependencyActions::class);
     }
 }

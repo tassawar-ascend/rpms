@@ -14,7 +14,7 @@ use LaravelCore174\Rpms\Actions\{
     ListRolePermissions
 };
 
-class DependencyActions implements RoleDependencyActionsInterface
+class RoleDependencyActions implements RoleDependencyActionsInterface
 {
     public function __construct(
         protected CreateRole $create,
