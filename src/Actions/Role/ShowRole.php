@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelCore174\Rpms\Actions;
+namespace LaravelCore174\Rpms\Actions\Role;
 
 class ShowRole
 {

@@ -4,11 +4,13 @@ namespace LaravelCore174\Rpms\Support;
 
 use Illuminate\Http\Request;
 use LaravelCore174\Rpms\Contracts\PermissionDependencyActionsInterface;
-use LaravelCore174\Rpms\Actions\Permission\IndexPermission;
-use LaravelCore174\Rpms\Actions\Permission\CreatePermission;
-use LaravelCore174\Rpms\Actions\Permission\ShowPermission;
-use LaravelCore174\Rpms\Actions\Permission\EditPermission;
-use LaravelCore174\Rpms\Actions\Permission\DeletePermission;
+use LaravelCore174\Rpms\Actions\Permission\{
+    IndexPermission,
+    CreatePermission,
+    ShowPermission,
+    EditPermission,
+    DeletePermission
+};
 
 class PermissionDependencyActions implements PermissionDependencyActionsInterface
 {

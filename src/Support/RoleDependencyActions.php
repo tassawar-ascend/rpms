@@ -4,7 +4,7 @@ namespace LaravelCore174\Rpms\Support;
 
 use Illuminate\Http\Request;
 use LaravelCore174\Rpms\Contracts\RoleDependencyActionsInterface;
-use LaravelCore174\Rpms\Actions\{
+use LaravelCore174\Rpms\Actions\Role\{
     CreateRole,
     IndexRole,
     ShowRole,
