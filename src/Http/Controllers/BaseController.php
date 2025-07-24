@@ -31,12 +31,24 @@ class BaseController extends Controller
             [
                 'code' => (int) $code,
                 'message' => $message,
-                'data' => convertNullToEmptyString($data) ?? [],
+                'data' => $this->convertNullToEmptyString($data) ?? [],
             ],
             (int) $code,
             [
                 'Content-Type' => 'application/json',
             ]
         );
+    }
+
+    public function convertNullToEmptyString($value)
+    {
+        array_walk_recursive(
+            $value,
+            function (&$item) {
+                $item = $item ?? '';
+            }
+        );
+
+        return $value;
     }
 }
