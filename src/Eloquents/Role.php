@@ -165,10 +165,18 @@ class Role extends Model implements RoleInterface
 
     public function regions()
     {
-        return $this->belongsToMany(Region::class);
+        if (class_exists(\App\Models\Region::class)) {
+            return $this->belongsToMany(\App\Models\Region::class);
+        }
+
+        return [];
     }
     public function departments()
     {
-        return $this->belongsToMany(Department::class);
+        if (class_exists(\App\Models\Department::class)) {
+            return $this->belongsToMany(\App\Models\Department::class);
+        }
+
+        return [];
     }
 }
